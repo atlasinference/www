@@ -15,7 +15,7 @@ tags:
   - scalable AI
   - open source AI
 excerpt: "Model size attracts attention, but inference infrastructure determines whether AI systems are usable, affordable, reliable, and scalable in production."
-permalink: /blog/why-inference-infrastructure-matters-more-than-model-size/
+permalink: /why-inference-infrastructure-matters-more-than-model-size/
 ---
 
 Artificial intelligence discussions often focus on model size, parameter counts, and training breakthroughs. Public attention tends to concentrate on the creation of larger and more capable models. Yet for most organizations, the practical challenge is not training a model. It is operating one reliably, efficiently, and at scale.
