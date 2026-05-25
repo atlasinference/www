@@ -1,0 +1,290 @@
+---
+layout: default
+title: AtlasInference
+description: AtlasInference builds open-source tooling for inference systems, evaluation, and reliable deployment.
+---
+<main id="top" class="wrap">
+    <div class="layout">
+
+      <!-- Left rail -->
+      <aside class="rail" aria-label="Section navigation">
+        <div class="rail-head">
+          <div class="k">Field Notes</div>
+          <div class="t">A documentation-first org for systems that need to behave predictably.</div>
+        </div>
+
+        <nav class="rail-nav">
+          <a href="{{ "/#overview" | relative_url }}"><span>Overview</span><span class="tag">01</span></a>
+          <a href="#work"><span>What we build</span><span class="tag">02</span></a>
+          <a href="{{ "/#repos" | relative_url }}"><span>Starter repos</span><span class="tag">03</span></a>
+          <a href="#principles"><span>Principles</span><span class="tag">04</span></a>
+          <a href="{{ "/#contribute" | relative_url }}"><span>Contribute</span><span class="tag">05</span></a>
+        </nav>
+      </aside>
+
+      <!-- Main content -->
+      <div class="content">
+
+        <!-- HERO -->
+        <div class="panel hero">
+          <div class="panel-inner hero-top">
+            <div>
+              <h1>Build inference that’s measurable, explainable, and boring in production.</h1>
+              <p class="lead">
+                AtlasInference publishes small, composable open-source tools for inference pipelines, evaluation harnesses,
+                and deployment patterns. The goal is fewer surprises, not more magic.
+              </p>
+
+              <div class="hero-meta">
+                <span class="chip">docs-first</span>
+                <span class="chip">reproducible runs</span>
+                <span class="chip">schema-driven interfaces</span>
+                <span class="chip">observability-ready</span>
+              </div>
+
+              <div class="hero-cta">
+                <a class="btn primary" href="{{ "/#repos" | relative_url }}">Explore starter repos</a>
+                <a class="btn" href="{{ "/#contribute" | relative_url }}">How to contribute</a>
+              </div>
+            </div>
+
+            <div class="map">
+              <h3>System map</h3>
+              <div class="diagram" id="diagram" role="region" aria-label="Interactive system map">
+                <svg class="wire" viewBox="0 0 600 300" preserveAspectRatio="none" aria-hidden="true">
+                  <path d="M120 80 C 240 60, 320 60, 470 90" stroke="rgba(31,111,235,.35)" stroke-width="2" fill="none"/>
+                  <path d="M120 80 C 220 160, 300 190, 150 230" stroke="rgba(14,165,164,.35)" stroke-width="2" fill="none"/>
+                  <path d="M470 90 C 380 170, 320 210, 445 235" stroke="rgba(249,115,22,.30)" stroke-width="2" fill="none"/>
+                  <path d="M150 230 C 260 240, 320 240, 445 235" stroke="rgba(16,19,26,.18)" stroke-width="2" fill="none"/>
+                </svg>
+
+                <div class="node n1" data-focus="inference">
+                  <strong>Inference</strong>
+                  <span>batching • routing • caching</span>
+                </div>
+
+                <div class="node n2" data-focus="evaluation">
+                  <strong>Evaluation</strong>
+                  <span>tasks • metrics • scorecards</span>
+                </div>
+
+                <div class="node n3" data-focus="registry">
+                  <strong>Registry</strong>
+                  <span>manifests • versions • constraints</span>
+                </div>
+
+                <div class="node n4" data-focus="deployment">
+                  <strong>Deployment</strong>
+                  <span>blueprints • traces • runbooks</span>
+                </div>
+              </div>
+
+              <p style="margin:10px 0 0; color: var(--muted); font-size: 13px;">
+                Click a node to see the emphasis shift across the site.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- OVERVIEW -->
+        <section class="panel block" id="overview">
+          <div class="section-head">
+            <div>
+              <h2>Overview</h2>
+              <p>AtlasInference is structured like a map: clear boundaries, named interfaces, and documented routes between components.</p>
+            </div>
+          </div>
+          <div class="cols">
+            <div class="card">
+              <div class="label">Why it exists</div>
+              <h3>Because “works in the demo” is not a reliability strategy</h3>
+              <p>Inference systems fail at the seams: untracked changes, silent regressions, and missing observability. We focus on the seams.</p>
+              <div class="meta">
+                <span class="pill">failure modes</span>
+                <span class="pill">budgeted latency</span>
+                <span class="pill">diffable behavior</span>
+              </div>
+            </div>
+            <div class="card">
+              <div class="label">How it’s built</div>
+              <h3>Small repos with stable contracts</h3>
+              <p>Adopt one component at a time. Every repo should make it obvious what it does and what it does not do.</p>
+              <div class="meta">
+                <span class="pill">schemas</span>
+                <span class="pill">versioning</span>
+                <span class="pill">docs-first</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- WHAT WE BUILD -->
+        <section class="panel block" id="work">
+          <div class="section-head">
+            <div>
+              <h2>What we build</h2>
+              <p>Infrastructure components that can be inspected and reasoned about. The emphasis is on clarity.</p>
+            </div>
+          </div>
+          <div class="cols">
+            <div class="card">
+              <div class="label">Inference</div>
+              <h3>Adapters and controls</h3>
+              <p>Request contracts, batching, caching, routing rules, and tracing context that survives across services.</p>
+              <div class="meta"><span class="pill">OpenTelemetry</span><span class="pill">cost controls</span><span class="pill">queues</span></div>
+            </div>
+            <div class="card">
+              <div class="label">Evaluation</div>
+              <h3>Harnesses and scorecards</h3>
+              <p>Repeatable test suites for models and prompts that make regressions visible before users find them.</p>
+              <div class="meta"><span class="pill">benchmarks</span><span class="pill">fixtures</span><span class="pill">reports</span></div>
+            </div>
+            <div class="card">
+              <div class="label">Registry</div>
+              <h3>Model manifests</h3>
+              <p>Metadata and compatibility constraints that travel with your model, not with tribal knowledge.</p>
+              <div class="meta"><span class="pill">schemas</span><span class="pill">diffs</span><span class="pill">constraints</span></div>
+            </div>
+            <div class="card">
+              <div class="label">Deployment</div>
+              <h3>Blueprints and runbooks</h3>
+              <p>Reference deployments, operational checklists, and observability patterns that scale across teams.</p>
+              <div class="meta"><span class="pill">runbooks</span><span class="pill">SLOs</span><span class="pill">alerts</span></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- STARTER REPOS -->
+        <section class="panel block" id="repos">
+          <div class="section-head">
+            <div>
+              <h2>Starter repos</h2>
+              <p>These are “credible defaults” you can publish first, then evolve. Keep the surface area small.</p>
+            </div>
+          </div>
+          <div class="cols">
+            <a class="card" href="#" aria-label="inference-kit">
+              <div class="label">repo</div>
+              <h3>inference-kit</h3>
+              <p>Minimal toolkit for adapters, batching, caching, tracing hooks, and request schemas.</p>
+              <div class="meta"><span class="pill">TypeScript</span><span class="pill">Python</span><span class="pill">OTel</span></div>
+            </a>
+            <a class="card" href="#" aria-label="eval-harness">
+              <div class="label">repo</div>
+              <h3>eval-harness</h3>
+              <p>CLI runner + metrics library for repeatable evaluations and regression scorecards.</p>
+              <div class="meta"><span class="pill">CLI</span><span class="pill">reports</span><span class="pill">fixtures</span></div>
+            </a>
+            <a class="card" href="#" aria-label="model-registry">
+              <div class="label">repo</div>
+              <h3>model-registry</h3>
+              <p>Schema-driven manifest standard for versions, constraints, expected behavior, and notes.</p>
+              <div class="meta"><span class="pill">JSON Schema</span><span class="pill">diffable</span><span class="pill">portable</span></div>
+            </a>
+            <a class="card" href="#" aria-label="deploy-blueprints">
+              <div class="label">repo</div>
+              <h3>deploy-blueprints</h3>
+              <p>Reference deployments + runbooks for predictable operations, tracing, and rollback patterns.</p>
+              <div class="meta"><span class="pill">K8s</span><span class="pill">SLOs</span><span class="pill">runbooks</span></div>
+            </a>
+          </div>
+        </section>
+
+        <!-- PRINCIPLES -->
+        <section class="panel block" id="principles">
+          <div class="section-head">
+            <div>
+              <h2>Principles</h2>
+              <p>We bias toward interfaces that are inspectable, testable, and stable over time.</p>
+            </div>
+          </div>
+          <div class="cols">
+            <div class="card">
+              <div class="label">01</div>
+              <h3>Make behavior testable</h3>
+              <p>If a change matters, you should be able to detect it. Prefer harnesses over opinions.</p>
+            </div>
+            <div class="card">
+              <div class="label">02</div>
+              <h3>Make tradeoffs explicit</h3>
+              <p>Latency and cost budgets are product decisions. Tooling should help teams choose clearly.</p>
+            </div>
+            <div class="card">
+              <div class="label">03</div>
+              <h3>Favor boring interfaces</h3>
+              <p>Stability is adoption. Simple contracts make integration obvious and maintenance cheaper.</p>
+            </div>
+            <div class="card">
+              <div class="label">04</div>
+              <h3>Observe what matters</h3>
+              <p>If you cannot explain performance, you cannot improve it. Traces and metrics come first.</p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- BLOG -->
+        <section class="panel block" id="blog">
+          <div class="section-head">
+            <div>
+              <h2>Blog</h2>
+              <p>Notes on inference systems, evaluation, deployment, and operational reliability.</p>
+            </div>
+            <a class="btn" href="{{ "/blog/" | relative_url }}">View all posts</a>
+          </div>
+          <div class="blog-list">
+            {% for post in site.posts limit:3 %}
+              <a class="card post-card" href="{{ post.url | relative_url }}">
+                <div class="label">{{ post.date | date: "%B %-d, %Y" }}</div>
+                <h3>{{ post.title }}</h3>
+                <p>{{ post.excerpt | strip_html | truncate: 180 }}</p>
+                <div class="post-meta">
+                  {% for tag in post.tags limit:3 %}<span class="pill">{{ tag }}</span>{% endfor %}
+                </div>
+              </a>
+            {% endfor %}
+          </div>
+        </section>
+
+        <!-- CONTRIBUTE -->
+        <section class="panel block" id="contribute">
+          <div class="section-head">
+            <div>
+              <h2>Contribute</h2>
+              <p>Start with docs, examples, and tests. Reliability improves fastest when the seams are documented.</p>
+            </div>
+          </div>
+          <div class="cols">
+            <div class="card">
+              <div class="label">Good first contributions</div>
+              <h3>Make one path clearer</h3>
+              <p>Add an example, tighten a schema, or document a failure mode. Small improvements compound.</p>
+              <div class="meta">
+                <span class="pill">docs</span>
+                <span class="pill">examples</span>
+                <span class="pill">tests</span>
+              </div>
+            </div>
+            <div class="card">
+              <div class="label">Community</div>
+              <h3>Open an issue with context</h3>
+              <p>Describe the environment, the expected behavior, and what you observed. Repro beats rhetoric.</p>
+              <div class="meta">
+                <a class="btn primary" id="issueBtn" href="https://github.com/atlasinference" target="_blank" rel="noreferrer">Open on GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <footer>
+            <div>© <span id="year"></span> AtlasInference • AtlasInference.org</div>
+            <div class="foot-links">
+              <a href="{{ "/#overview" | relative_url }}">Overview</a>
+              <a href="{{ "/#repos" | relative_url }}">Repos</a>
+              <a href="{{ "/#contribute" | relative_url }}">Contribute</a>
+            </div>
+          </footer>
+        </section>
+
+      </div>
+    </div>
+  </main>

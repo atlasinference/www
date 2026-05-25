@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description | escape }}">
+    <link rel="canonical" href="{{ page.url | absolute_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
+    {% if site.google_analytics %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '{{ site.google_analytics }}');
+    </script>
+    {% endif %}
+    {% if site.adsense_client %}
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ site.adsense_client }}" crossorigin="anonymous"></script>
+    {% endif %}
+  </head>
+  <body>
+    <div class="topbar">
+      <div class="wrap">
+        <div class="topbar-inner">
+          <a class="brand" href="{{ '/' | relative_url }}" aria-label="AtlasInference home">
+            <div class="mark" aria-hidden="true"></div>
+            <div>
+              <strong>AtlasInference</strong>
+              <span>inference systems • evaluation • deployment</span>
+            </div>
+          </a>
+
+          <div class="top-actions">
+            <a class="btn" href="{{ '/blog/' | relative_url }}">Blog</a>
+            <button class="btn" id="themeBtn" type="button" aria-label="Toggle theme">Theme</button>
+            <a class="btn primary" id="ghBtn" href="{{ site.github_org_url }}" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{ content }}
+
+    <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
+  </body>
+</html>

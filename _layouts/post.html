@@ -1,0 +1,22 @@
+---
+layout: page
+---
+<article class="panel article">
+  <header class="article-header">
+    <div class="label">{{ page.date | date: "%B %-d, %Y" }}</div>
+    <h1>{{ page.title }}</h1>
+    {% if page.description %}<p>{{ page.description }}</p>{% endif %}
+    {% if page.tags %}
+    <div class="post-meta">
+      {% for tag in page.tags %}<span class="pill">{{ tag }}</span>{% endfor %}
+    </div>
+    {% endif %}
+  </header>
+  <div class="article-body">
+    {{ content }}
+  </div>
+  <nav class="article-nav">
+    <a class="btn" href="{{ '/blog/' | relative_url }}">Back to blog</a>
+    <a class="btn primary" href="{{ site.github_org_url }}" target="_blank" rel="noreferrer">View on GitHub</a>
+  </nav>
+</article>

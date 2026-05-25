@@ -1,0 +1,21 @@
+title: AtlasInference
+description: AtlasInference builds open-source tooling for inference systems, evaluation, and reliable deployment.
+url: "https://atlasinference.org"
+baseurl: ""
+lang: en
+
+github_org_url: "https://github.com/atlasinference"
+google_analytics: "G-TTR79LB24M"
+adsense_client: "ca-pub-2079625064533995"
+
+permalink: /blog/:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
