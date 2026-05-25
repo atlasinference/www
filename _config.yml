@@ -8,7 +8,7 @@ github_org_url: "https://github.com/atlasinference"
 google_analytics: "G-TTR79LB24M"
 adsense_client: "ca-pub-2079625064533995"
 
-permalink: /blog/:title/
+permalink: /:title/
 
 plugins:
   - jekyll-feed
